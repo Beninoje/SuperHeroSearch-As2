@@ -8,37 +8,12 @@ import javafx.scene.image.ImageView;
 
 
 public class HeroDetails {
-    private String intelligence;
-    private String strength;
-    private String speed;
-    private String durability;
-    private String power;
-    private String combat;
-
     private HeroImage image;
 
-    public String getIntelligence() {
-        return intelligence;
-    }
+    private HeroPowerStats powerstats;
 
-    public String getStrength() {
-        return strength;
-    }
-
-    public String getSpeed() {
-        return speed;
-    }
-
-    public String getDurability() {
-        return durability;
-    }
-
-    public String getPower() {
-        return power;
-    }
-
-    public String getCombat() {
-        return combat;
+    public HeroPowerStats getPowerStats() {
+        return powerstats;
     }
 
     public HeroImage getImage() {

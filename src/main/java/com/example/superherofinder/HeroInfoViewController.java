@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-public class HeroInfoViewController {
+public class HeroInfoViewController implements LoadHero{
 
     @FXML
     private Label combatLabel;
@@ -42,29 +42,27 @@ public class HeroInfoViewController {
     void goBack(ActionEvent event) throws IOException {
         SceneChanger.changeScenes(event, "hero-view.fxml");
     }
-    public void loadHeroInfo(String heroID){
+    public void loadHeroInfo(String heroID) {
         try {
             HeroDetails heroDetails = APIUtility.getHeroDetails(heroID);
 
-            intelligenceLabel.setText(heroDetails.getIntelligence());
-            imageView.setImage(new Image(String.valueOf(heroDetails.getImage())));
-            strengthLabel.setText(heroDetails.getStrength());
-            speedLabel.setText(heroDetails.getSpeed());
-            durabilityLabel.setText(heroDetails.getDurability());
-            powerLabel.setText(heroDetails.getPower());
-            combatLabel.setText(heroDetails.getCombat());
+            String imageUrl = heroDetails.getImage().getUrl();
 
+            imageView.setImage(new Image(imageUrl));
+            intelligenceLabel.setText("Intelligence: " + heroDetails.getPowerStats().getIntelligence());
+            strengthLabel.setText("Strength: " + heroDetails.getPowerStats().getStrength());
+            speedLabel.setText("Speed: " + heroDetails.getPowerStats().getSpeed());
+            durabilityLabel.setText("Durability: " + heroDetails.getPowerStats().getDurability());
+            powerLabel.setText("Power:" + heroDetails.getPowerStats().getPower());
+            combatLabel.setText("Combat: " + heroDetails.getPowerStats().getCombat());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {
-
             imageView.setImage(new Image(
                     Main.class.getResourceAsStream("imgs/heroIcon.png")));
-
         }
-
-
     }
+
 
 }
