@@ -3,10 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.superherofinder.HeroInfoViewController">
@@ -40,35 +42,126 @@
                   </VBox>
                   <VBox prefHeight="523.0" prefWidth="397.0">
                      <children>
-                        <Label fx:id="intelligenceLabel" text="Intelligence: 99" />
-                        <Label fx:id="strengthLabel" layoutX="10.0" layoutY="10.0" text="Strength: 99">
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/intelligence.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="intelligenceLabel" prefHeight="48.0" prefWidth="344.0" text="Intelligence: 99">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/strength.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="strengthLabel" prefHeight="48.0" prefWidth="339.0" text="Strength: 99">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </Label>
-                        <Label fx:id="speedLabel" layoutX="10.0" layoutY="36.0" text="Speed: 99">
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/speed.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="speedLabel" prefHeight="48.0" prefWidth="341.0" text="Speed: 99">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </Label>
-                        <Label fx:id="durabilityLabel" layoutX="10.0" layoutY="62.0" text="Durability: 99">
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/durability.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="durabilityLabel" prefHeight="48.0" prefWidth="351.0" text="Durability: 99">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </Label>
-                        <Label fx:id="powerLabel" layoutX="10.0" layoutY="88.0" text="Power: 99">
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/power.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="powerLabel" prefHeight="48.0" prefWidth="358.0" text="Power: 99">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </Label>
-                        <Label fx:id="combatLabel" layoutX="10.0" layoutY="114.0" text="Combat: 99">
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="65.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imgs/combat.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="combatLabel" prefHeight="48.0" prefWidth="349.0" text="Combat: 99">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
-                        </Label>
-                        <Button fx:id="goBack" mnemonicParsing="false" onAction="#goBack" text="Go Back">
+                        </HBox>
+                        <Button fx:id="button" mnemonicParsing="false" onAction="#goBack" text="Go Back">
                            <VBox.margin>
-                              <Insets top="50.0" />
+                              <Insets top="20.0" />
                            </VBox.margin>
                         </Button>
                      </children>
