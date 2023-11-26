@@ -39,19 +39,25 @@ public class HeroViewController implements Initializable {
     private TextField searchTextField;
     @FXML
     void searchHero(ActionEvent event) throws IOException, InterruptedException {
+
         String heroName = searchTextField.getText().trim();
+
+
         try {
             List<Hero> hero = APIUtility.callAPI(heroName);
             listView.getItems().clear();
             listView.getItems().addAll(hero);
             listView.setVisible(true);
+            heroFoundLabel.setText("Showing: " + listView.getItems().size() + " of " + hero.size());
+            heroFoundLabel.setVisible(true);
         }
         catch(NullPointerException e){
             errorLabel.setVisible(true);
+            heroFoundLabel.setText(" ");
+            heroFoundLabel.setVisible(false);
         }
 
-        heroFoundLabel.setText("Showing: " + listView.getItems().size());
-        heroFoundLabel.setVisible(true);
+
 
     }
 

@@ -20,12 +20,25 @@
             </Label>
             <HBox prefHeight="583.0" prefWidth="1000.0">
                <children>
-                  <ImageView fx:id="imageView" fitHeight="384.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
+                  <VBox prefHeight="523.0" prefWidth="350.0">
                      <HBox.margin>
                         <Insets left="20.0" top="60.0" />
                      </HBox.margin>
-                  </ImageView>
-                  <VBox prefHeight="492.0" prefWidth="656.0">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="384.0" fitWidth="364.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="fullNameLabel" prefHeight="26.0" prefWidth="370.0" text="Full Name: N/A" wrapText="true">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="placeOfBirthLabel" layoutX="10.0" layoutY="414.0" prefHeight="26.0" prefWidth="391.0" text="Place of Birth: N/A" wrapText="true">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="523.0" prefWidth="397.0">
                      <children>
                         <Label fx:id="intelligenceLabel" text="Intelligence: 99" />
                         <Label fx:id="strengthLabel" layoutX="10.0" layoutY="10.0" text="Strength: 99">
@@ -64,6 +77,9 @@
                      </HBox.margin>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

@@ -12,11 +12,17 @@ public class HeroDetails {
 
     private HeroPowerStats powerstats;
 
+    private HeroBiography biography;
+
     public HeroPowerStats getPowerStats() {
         return powerstats;
     }
 
     public HeroImage getImage() {
         return image;
+    }
+
+    public HeroBiography getBiography(){
+        return biography;
     }
 }

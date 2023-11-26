@@ -6,6 +6,8 @@ public class Hero {
     private HeroPowerStats powerstats;
     private HeroImage image;
 
+    private HeroBiography biography;
+
     public String getName() {
         return name;
     }
@@ -22,6 +24,9 @@ public class Hero {
         return id;
     }
 
+    public HeroBiography getBiography() {
+        return biography;
+    }
 
     @Override
     public String toString(){

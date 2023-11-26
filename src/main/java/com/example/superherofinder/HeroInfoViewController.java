@@ -39,6 +39,11 @@ public class HeroInfoViewController implements LoadHero{
     private ImageView imageView;
 
     @FXML
+    private Label fullNameLabel;
+    @FXML
+    private Label placeOfBirthLabel;
+
+    @FXML
     void goBack(ActionEvent event) throws IOException {
         SceneChanger.changeScenes(event, "hero-view.fxml");
     }
@@ -49,12 +54,15 @@ public class HeroInfoViewController implements LoadHero{
             String imageUrl = heroDetails.getImage().getUrl();
 
             imageView.setImage(new Image(imageUrl));
+
             intelligenceLabel.setText("Intelligence: " + heroDetails.getPowerStats().getIntelligence());
             strengthLabel.setText("Strength: " + heroDetails.getPowerStats().getStrength());
             speedLabel.setText("Speed: " + heroDetails.getPowerStats().getSpeed());
             durabilityLabel.setText("Durability: " + heroDetails.getPowerStats().getDurability());
-            powerLabel.setText("Power:" + heroDetails.getPowerStats().getPower());
+            powerLabel.setText("Power: " + heroDetails.getPowerStats().getPower());
             combatLabel.setText("Combat: " + heroDetails.getPowerStats().getCombat());
+            placeOfBirthLabel.setText("Place of birth: " + heroDetails.getBiography().getBirthPlace());
+            fullNameLabel.setText("Full Name: " + heroDetails.getBiography().getFullName());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -63,6 +71,10 @@ public class HeroInfoViewController implements LoadHero{
                     Main.class.getResourceAsStream("imgs/heroIcon.png")));
         }
     }
+
+
+
+
 
 
 }
