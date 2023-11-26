@@ -29,5 +29,20 @@ public class APIUtility {
          APIResponse apiResponse = gson.fromJson(response.body(), APIResponse.class);
          return apiResponse.getResults();
     }
+    public static HeroDetails getHeroDetails(String heroID) throws IOException, InterruptedException {
+        heroID = heroID.trim().replaceAll(" ", "%20");
+
+        //this is the search String that we used in the browser
+        String uri = "https://www.superheroapi.com/api.php/945222833380656/"+heroID;
+
+        //configure the environment to make an HTTP request(this includes an update to the module-info.java file)
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+        HttpResponse<String> response = client.send(httpRequest, HttpResponse
+                .BodyHandlers.ofString());
+
+        Gson gson = new Gson();
+        return gson.fromJson(response.body(),HeroDetails.class);
+    }
 
 }

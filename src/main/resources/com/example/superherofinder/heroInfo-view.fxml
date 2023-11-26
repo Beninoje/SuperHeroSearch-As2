@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.superherofinder.HeroInfoViewController">
+   <children>
+      <VBox layoutX="229.0" layoutY="199.0" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="header" alignment="CENTER" prefHeight="58.0" prefWidth="1000.0" text="About your Hero!">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="583.0" prefWidth="1000.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="384.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="20.0" top="60.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox prefHeight="492.0" prefWidth="656.0">
+                     <children>
+                        <Label fx:id="intelligenceLabel" text="Intelligence: 99" />
+                        <Label fx:id="strengthLabel" layoutX="10.0" layoutY="10.0" text="Strength: 99">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="speedLabel" layoutX="10.0" layoutY="36.0" text="Speed: 99">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="durabilityLabel" layoutX="10.0" layoutY="62.0" text="Durability: 99">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="powerLabel" layoutX="10.0" layoutY="88.0" text="Power: 99">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="combatLabel" layoutX="10.0" layoutY="114.0" text="Combat: 99">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="goBack" mnemonicParsing="false" onAction="#goBack" text="Go Back">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" top="60.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

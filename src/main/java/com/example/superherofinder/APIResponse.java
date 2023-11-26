@@ -8,7 +8,7 @@ public class APIResponse {
     private String response;
 
     @SerializedName("results-for")
-    private String name;
+    private String resultsFor;
 
     private List<Hero> results;
 
@@ -16,8 +16,8 @@ public class APIResponse {
         return response;
     }
 
-    public String getName() {
-        return name;
+    public String getResultsFor() {
+        return resultsFor;
     }
 
     public List<Hero> getResults() {

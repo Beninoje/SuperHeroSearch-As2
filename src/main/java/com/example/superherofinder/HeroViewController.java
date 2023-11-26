@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
@@ -32,6 +33,9 @@ public class HeroViewController implements Initializable {
     private ListView<Hero> listView;
 
     @FXML
+    private Label errorLabel;
+
+    @FXML
     private TextField searchTextField;
     @FXML
     void searchHero(ActionEvent event) throws IOException, InterruptedException {
@@ -42,15 +46,19 @@ public class HeroViewController implements Initializable {
             listView.getItems().addAll(hero);
             listView.setVisible(true);
         }
-        catch(IllegalArgumentException e){
-            e.printStackTrace();
+        catch(NullPointerException e){
+            errorLabel.setVisible(true);
         }
 
-//        heroFoundLabel.setText("Showing: " + apiResponse.getResults().size());
+        heroFoundLabel.setText("Showing: " + listView.getItems().size());
+        heroFoundLabel.setVisible(true);
+
     }
 
     @FXML
-    void viewHero(ActionEvent event) {
+    void viewHero(ActionEvent event) throws IOException {
+        Hero heroSelected = listView.getSelectionModel().getSelectedItem();
+        SceneChanger.changeScenes(event,"heroInfo-view.fxml",heroSelected.getId());
 
     }
 
@@ -59,6 +67,32 @@ public class HeroViewController implements Initializable {
         listView.setVisible(false);
         heroFoundLabel.setVisible(false);
         resultsView.setVisible(false);
+        errorLabel.setVisible(false);
+
+        listView.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, oldValue, heroSelected)->{
+                    if (heroSelected!= null)
+                    {
+                        resultsView.setVisible(true);
+                        try {
+                            String imageUrl = heroSelected.getImage().getUrl();
+                            heroImage.setImage(new Image(imageUrl));
+                        }catch (IllegalArgumentException e)
+                        {
+                            heroImage.setImage(new Image(
+                                    Main.class.getResourceAsStream("imgs/heroIcon.jpeg")));
+                        }
+                    }
+                    else
+                    {
+                        resultsView.setVisible(false);
+                    }
+
+                });
 
     }
+
+
 }
+

@@ -34,6 +34,11 @@
                   <Button mnemonicParsing="false" onAction="#searchHero" text="Search" />
                </children>
             </HBox>
+            <Label fx:id="errorLabel" text="Error: Please use hyphinated text">
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
             <HBox>
                <VBox.margin>
                   <Insets left="40.0" top="20.0" />
